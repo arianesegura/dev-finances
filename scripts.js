@@ -85,12 +85,12 @@ const DOM = {
 
     const amount = Utils.formatCurrency(transaction.amount)
 
-    const html = `
+    const html =
+      `
     <td class="description">${transaction.description}</td>
     <td class="${CSSclass}">${amount}</td>
     <td class="date">${transaction.date}</td>
-    <img onclick="Transaction.remove.(${index})" src="./assets/minus.svg" alt=Remove transação">
-    </td>
+    <td><img onclick="Transaction.remove(${index})"src="./assets/minus.svg" alt=Remove transação"></td>
    `
     return html
   },
@@ -114,9 +114,9 @@ const DOM = {
 
 const Utils = {
   formatAmount(value) {
-    value = Number(value) * 100
+    value = value * 100
 
-    return value
+    return Math.round(value)
   },
 
   formatDate(date) {
